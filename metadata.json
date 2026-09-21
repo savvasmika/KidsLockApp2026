@@ -1,0 +1,6 @@
+{
+  "name": "KIDLOCK",
+  "description": "Smart screen time management and remote device unlock for parents and children with local Wi-Fi discovery, temporary codes, and fun animated themes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

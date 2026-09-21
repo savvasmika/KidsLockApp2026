@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KIDLOCK</string>
+    <string name="welcome_title">KIDLOCK</string>
+    <string name="welcome_subtitle">Έξυπνη διαχείριση χρόνου οθόνης.</string>
+    <string name="btn_get_started">ΞΕΚΙΝΗΣΤΕ</string>
+    
+    <!-- Roles -->
+    <string name="role_selection_title">Ποιος χρησιμοποιεί αυτή τη συσκευή;</string>
+    <string name="role_selection_subtitle">Επιλέξτε το ρόλο για αυτό το τηλέφωνο ή tablet:</string>
+    <string name="role_parent">Συσκευή Γονέα</string>
+    <string name="role_parent_desc">Παρακολουθήστε, ελέγξτε το χρόνο οθόνης και ξεκλειδώστε απομακρυσμένα τις συσκευές του παιδιού.</string>
+    <string name="role_child">Συσκευή Παιδιού</string>
+    <string name="role_child_desc">Περιβάλλον tablet με διασκεδαστικά θέματα, υπενθυμίσεις διαλείμματος και αιτήματα ξεκλειδώματος.</string>
+    
+    <!-- Languages -->
+    <string name="language_selection_title">Επιλογή Γλώσσας / Choose Language</string>
+    <string name="lang_en">🇬🇧 English</string>
+    <string name="lang_el">🇬🇷 Ελληνικά</string>
+    <string name="btn_continue">Συνέχεια</string>
+    <string name="btn_back">Πίσω</string>
+    <string name="btn_save">Αποθήκευση</string>
+    <string name="btn_cancel">Ακύρωση</string>
+    <string name="btn_close">Κλείσιμο</string>
+    <string name="btn_ok">Εντάξει</string>
+    
+    <!-- PIN Setup -->
+    <string name="setup_parent_pin_title">Δημιουργία PIN Γονέα</string>
+    <string name="setup_parent_pin_subtitle">Ορίστε ένα 4ψήφιο PIN ασφαλείας για την προστασία των ρυθμίσεων και ξεκλείδωμα έκτακτης ανάγκης.</string>
+    <string name="enter_parent_pin">Εισάγετε PIN Γονέα</string>
+    <string name="confirm_parent_pin">Επιβεβαίωση PIN Γονέα</string>
+    <string name="pin_error_mismatch">Τα PIN δεν ταιριάζουν. Παρακαλώ πληκτρολογήστε ξανά.</string>
+    <string name="pin_error_invalid">Το PIN πρέπει να είναι 4 ψηφία.</string>
+    <string name="pin_verified">Το PIN επαληθεύτηκε με επιτυχία!</string>
+    <string name="pin_incorrect">Λανθασμένο PIN. Δοκιμάστε ξανά.</string>
+    <string name="change_pin">Αλλαγή PIN Γονέα</string>
+    <string name="current_pin">Τρέχον PIN</string>
+    <string name="new_pin">Νέο 4ψήφιο PIN</string>
+    
+    <!-- Child Setup & Discovery -->
+    <string name="child_setup_title">Ρύθμιση Συσκευής Παιδιού</string>
+    <string name="child_setup_subtitle">Εξατομικεύστε τα στοιχεία της συσκευής του παιδιού σας:</string>
+    <string name="child_name_label">Όνομα Παιδιού</string>
+    <string name="child_name_hint">π.χ. Γιώργος</string>
+    <string name="child_device_type">Τύπος Συσκευής</string>
+    <string name="device_tablet">Android Tablet</string>
+    <string name="device_phone">Android Τηλέφωνο</string>
+    <string name="waiting_for_parent">Αναμονή για Συσκευή Γονέα</string>
+    <string name="waiting_parent_desc">Κρατήστε αυτή την οθόνη ανοιχτή. Συνδέστε αυτή τη συσκευή στο ίδιο δίκτυο Wi-Fi με τη Συσκευή Γονέα.</string>
+    <string name="device_name_on_network">Μετάδοση ως: %1$s</string>
+    <string name="nearby_devices_title">Κοντινές Συσκευές KIDLOCK</string>
+    <string name="searching_devices">Αναζήτηση κοντινών συσκευών KIDLOCK...</string>
+    <string name="searching_desc">Σάρωση τοπικού δικτύου Wi-Fi μέσω ανακάλυψης υπηρεσιών Android NSD...</string>
+    <string name="no_devices_found">Δεν βρέθηκαν συσκευές KIDLOCK στο τοπικό δίκτυο Wi-Fi.</string>
+    <string name="btn_scan_again">Αναζήτηση Ξανά</string>
+    <string name="same_wifi_network">Ίδιο δίκτυο Wi-Fi</string>
+    <string name="btn_pair">ΣΥΖΕΥΞΗ</string>
+    <string name="pairing_in_progress">Σύζευξη σε εξέλιξη...</string>
+    
+    <!-- Pairing -->
+    <string name="confirm_pairing_title">Επιβεβαίωση Σύζευξης</string>
+    <string name="confirm_pairing_parent_subtitle">Επιβεβαιώστε αυτόν τον 6ψήφιο κωδικό στην οθόνη του παιδιού σας:</string>
+    <string name="confirm_pairing_child_title">Η συσκευή γονέα ζητά σύζευξη</string>
+    <string name="confirm_pairing_child_subtitle">Μια συσκευή γονέα ζητά να συνδεθεί με αυτή τη συσκευή. Κωδικός επιβεβαίωσης:</string>
+    <string name="pairing_code_label">Κωδικός Επιβεβαίωσης</string>
+    <string name="btn_accept_pairing">ΑΠΟΔΟΧΗ</string>
+    <string name="btn_reject_pairing">ΑΠΟΡΡΙΨΗ</string>
+    <string name="pairing_success">Η συσκευή συνδέθηκε με επιτυχία!</string>
+    <string name="pairing_rejected">Το αίτημα σύζευξης απορρίφθηκε.</string>
+    <string name="pairing_failed">Η σύζευξη απέτυχε. Βεβαιωθείτε ότι και οι δύο συσκευές είναι συνδεδεμένες.</string>
+    
+    <!-- Parent Dashboard -->
+    <string name="parent_dashboard_title">KIDLOCK ΓΟΝΕΑΣ</string>
+    <string name="child_device_section">Συσκευή Παιδιού</string>
+    <string name="status_connected_wifi">Συνδεδεμένο — Ίδιο Wi-Fi</string>
+    <string name="status_connected_remote">Συνδεδεμένο — Απομακρυσμένο</string>
+    <string name="status_connecting">Σύνδεση...</string>
+    <string name="status_offline">Εκτός σύνδεσης</string>
+    <string name="battery_label">Μπαταρία: %1$d%%</string>
+    <string name="battery_unknown">Μπαταρία: Μ/Δ</string>
+    <string name="lock_status_label">Κατάσταση:</string>
+    <string name="status_locked">🔒 ΚΛΕΙΔΩΜΕΝΟ</string>
+    <string name="status_unlocked">🔓 ΞΕΚΛΕΙΔΩΤΟ</string>
+    <string name="last_activity_label">Τελευταία δραστηριότητα: %1$s</string>
+    <string name="current_theme_label">Τρέχον θέμα: %1$s</string>
+    <string name="current_language_label">Τρέχουσα γλώσσα: %1$s</string>
+    <string name="btn_unlock_child">ΞΕΚΛΕΙΔΩΜΑ ΣΥΣΚΕΥΗΣ ΠΑΙΔΙΟΥ</string>
+    <string name="btn_lock_child">ΚΛΕΙΔΩΜΑ ΣΥΣΚΕΥΗΣ ΠΑΙΔΙΟΥ</string>
+    <string name="btn_send_code">ΑΠΟΣΤΟΛΗ ΚΩΔΙΚΟΥ ΞΕΚΛΕΙΔΩΜΑΤΟΣ</string>
+    <string name="btn_device_settings">ΡΥΘΜΙΣΕΙΣ ΣΥΣΚΕΥΗΣ</string>
+    <string name="btn_themes">ΘΕΜΑΤΑ</string>
+    <string name="btn_pair_new">ΣΥΖΕΥΞΗ ΝΕΑΣ ΣΥΣΚΕΥΗΣ</string>
+    <string name="unlock_sent">Η εντολή ξεκλειδώματος στάλθηκε με ασφάλεια!</string>
+    <string name="lock_sent">Η εντολή κλειδώματος στάλθηκε με ασφάλεια!</string>
+    <string name="no_paired_child">Δεν έχει συνδεθεί ακόμη συσκευή παιδιού.</string>
+    <string name="btn_pair_first_child">Σύνδεση Συσκευής Παιδιού</string>
+    
+    <!-- Unlock Requests -->
+    <string name="unlock_request_title">🔔 ΑΙΤΗΜΑ ΞΕΚΛΕΙΔΩΜΑΤΟΣ</string>
+    <string name="unlock_request_message">Το %1$s ζητά ξεκλείδωμα.</string>
+    <string name="btn_unlock_now">ΞΕΚΛΕΙΔΩΜΑ ΤΩΡΑ</string>
+    <string name="btn_generate_code">ΔΗΜΙΟΥΡΓΙΑ ΚΩΔΙΚΟΥ</string>
+    <string name="btn_deny">ΑΠΟΡΡΙΨΗ</string>
+    <string name="request_approved">Το αίτημα ξεκλειδώματος εγκρίθηκε!</string>
+    <string name="request_denied">Το αίτημα ξεκλειδώματος απορρίφθηκε.</string>
+    <string name="no_pending_requests">Δεν υπάρχουν εκκρεμή αιτήματα ξεκλειδώματος.</string>
+    
+    <!-- Temporary Code -->
+    <string name="temp_code_title">ΠΡΟΣΩΡΙΝΟΣ ΚΩΔΙΚΟΣ ΞΕΚΛΕΙΔΩΜΑΤΟΣ</string>
+    <string name="temp_code_desc">Δώστε αυτόν τον κωδικό μίας χρήσης στο παιδί σας για να ξεκλειδώσει τη συσκευή του:</string>
+    <string name="temp_code_expires_in">Λήγει σε: %1$s</string>
+    <string name="btn_enter_code">ΕΙΣΑΓΩΓΗ ΚΩΔΙΚΟΥ ΞΕΚΛΕΙΔΩΜΑΤΟΣ</string>
+    <string name="enter_temp_code_title">Εισαγωγή Κωδικού Ξεκλειδώματος</string>
+    <string name="enter_temp_code_hint">6ψήφιος κωδικός</string>
+    <string name="code_verified_success">Ο κωδικός επαληθεύτηκε! Το tablet ξεκλειδώθηκε.</string>
+    <string name="code_invalid_or_expired">Μη έγκυρος ή ληγμένος κωδικός ξεκλειδώματος.</string>
+    <string name="btn_verify_code">Επαλήθευση Κωδικού</string>
+    
+    <!-- Child Screen -->
+    <string name="child_break_title">⭐ ΩΡΑ ΓΙΑ ΔΙΑΛΕΙΜΜΑ! ⭐</string>
+    <string name="child_break_subtitle">Το tablet σου ξεκουράζεται για λίγο.</string>
+    <string name="child_break_prompt">Ρώτησε τον γονιό σου αν χρειάζεσαι να συνεχίσεις.</string>
+    <string name="btn_ask_parent">ΖΗΤΗΣΤΕ ΚΩΔΙΚΟ ΑΠΟ ΤΟΝ ΓΟΝΙΟ</string>
+    <string name="btn_ask_parent_short">ΕΡΩΤΗΣΗ ΓΟΝΕΑ</string>
+    <string name="request_sent_waiting">Το αίτημα στάλθηκε! Αναμονή για απάντηση από τον γονιό... ⏳</string>
+    <string name="tablet_unlocked_celebration">✨ Το tablet σου ξεκλειδώθηκε! Καλή διασκέδαση! ✨</string>
+    <string name="child_unlocked_title">Το Tablet είναι Ξεκλείδωτο</string>
+    <string name="child_unlocked_desc">Απόλαυσε το χρόνο σου! Θυμήσου να κάνεις υγιή διαλείμματα.</string>
+    <string name="btn_lock_now_child">Κάνε Διάλειμμα Τώρα</string>
+    <string name="btn_change_theme">Επιλογή Θέματος</string>
+    <string name="btn_child_settings">Γονικός Έλεγχος</string>
+    <string name="child_connection_local">🟢 Συνδεδεμένο με Γονέα (Wi-Fi)</string>
+    <string name="child_connection_remote">🔵 Συνδεδεμένο με Γονέα (Cloud)</string>
+    <string name="child_connection_offline">🔴 Εκτός σύνδεσης — Ο γονέας δεν είναι συνδεδεμένος</string>
+    <string name="idle_warning">Εντοπίστηκε αδράνεια: Η οθόνη θα κλειδώσει σύντομα.</string>
+    
+    <!-- Themes -->
+    <string name="theme_space">🌌 Διάστημα</string>
+    <string name="theme_gaming">🎮 Παιχνίδια</string>
+    <string name="theme_galaxy">🚀 Γαλαξίας</string>
+    <string name="theme_dinosaurs">🦖 Δεινόσαυροι</string>
+    <string name="theme_animals">🐼 Ζώα</string>
+    <string name="theme_racing">🏎 Αγώνες</string>
+    <string name="theme_sports">⚽ Αθλητισμός</string>
+    <string name="theme_fantasy">🧙 Φαντασία</string>
+    <string name="theme_ocean">🌊 Ωκεανός</string>
+    <string name="theme_robots">🤖 Ρομπότ</string>
+    <string name="theme_colorful">🌈 Πολύχρωμο</string>
+    <string name="theme_adventure">🌳 Περιπέτεια</string>
+    <string name="theme_gallery_title">Συλλογή Θεμάτων</string>
+    <string name="theme_select">Επιλογή Θέματος</string>
+    <string name="theme_applied">Το θέμα εφαρμόστηκε με επιτυχία!</string>
+    
+    <!-- Inactivity & Settings -->
+    <string name="inactivity_timeout_title">Χρονικό Όριο Αδράνειας</string>
+    <string name="inactivity_desc">Αυτόματο κλείδωμα του tablet μετά από αδράνεια:</string>
+    <string name="timeout_5_min">5 λεπτά</string>
+    <string name="timeout_10_min">10 λεπτά</string>
+    <string name="timeout_15_min">15 λεπτά</string>
+    <string name="timeout_20_min">20 λεπτά</string>
+    <string name="timeout_30_min">30 λεπτά</string>
+    <string name="timeout_custom">Προσαρμοσμένο</string>
+    
+    <!-- Device Management -->
+    <string name="settings_title">Ρυθμίσεις Συσκευής</string>
+    <string name="device_name_label">Όνομα Συσκευής</string>
+    <string name="btn_rename">Μετονομασία Συσκευής</string>
+    <string name="btn_unpair">Κατάργηση Σύζευξης</string>
+    <string name="unpair_confirm_title">Κατάργηση Σύζευξης Συσκευής;</string>
+    <string name="unpair_confirm_message">Αυτό θα καταργήσει τη σύνδεση με το %1$s. Θα χρειαστεί να συνδεθείτε ξανά μέσω Wi-Fi.</string>
+    <string name="animations_toggle_title">Κινούμενα Σχέδια</string>
+    <string name="animations_on">ΕΝΕΡΓΑ</string>
+    <string name="animations_off">ΑΝΕΝΕΡΓΑ</string>
+    <string name="kiosk_mode_title">Λειτουργία Kiosk / Διαχειριζόμενο Κλείδωμα</string>
+    <string name="kiosk_mode_desc">Κλειδώνει το tablet αυστηρά στο KIDLOCK χρησιμοποιώντας το Android DevicePolicyManager / LockTask.</string>
+    <string name="kiosk_setup_guide">Οδηγός Ρύθμισης Kiosk</string>
+    <string name="kiosk_guide_text">Σημείωση Ασφάλειας Android: Το Android περιορίζει το κλείδωμα εφαρμογών στο παρασκήνιο χωρίς δικαιώματα Device Owner. Για πλήρες κλείδωμα hardware, ενεργοποιήστε το Pin-to-Screen ή ορίστε το KIDLOCK ως Device Owner μέσω adb:\n\nadb shell dpm set-device-owner com.aistudio.kidlock.kdqlvx/.receiver.KidLockDeviceAdminReceiver</string>
+    <string name="btn_enable_lock_task">Έναρξη Καρφιτσώματος Οθόνης / Lock Task</string>
+    <string name="btn_disable_lock_task">Έξοδος από Κάρφωμα Οθόνης</string>
+    <string name="connection_info_title">Δίκτυο &amp; Ασφάλεια</string>
+    <string name="mode_local_wifi">Τοπικό Wi-Fi (Απευθείας Peer-to-Peer)</string>
+    <string name="mode_remote_cloud">Απομακρυσμένο Internet (Αναμετάδοση Backend)</string>
+    <string name="backend_config_note">Το τοπικό mDNS Wi-Fi &amp; η απευθείας πιστοποιημένη επικοινωνία είναι ενεργά. Η απομακρυσμένη υπηρεσία backend είναι έτοιμη για περιαγωγή μέσω Internet.</string>
+    <string name="device_admin_label">Διαχειριστής Συσκευής KIDLOCK</string>
+    <string name="device_admin_description">Ενεργοποιεί τη λειτουργία lock task και πολιτικές οθόνης του Android για την ασφάλεια των παιδιών.</string>
+    
+    <!-- Switch Role option -->
+    <string name="switch_role">Αλλαγή Ρόλου Συσκευής</string>
+    <string name="switch_role_confirm">Εισάγετε το PIN Γονέα για να αλλάξετε ρόλο συσκευής ή να εναλλάξετε μεταξύ λειτουργίας Γονέα και Παιδιού.</string>
+</resources>
