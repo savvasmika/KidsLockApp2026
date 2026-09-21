@@ -37,6 +37,11 @@ jobs:
         with:
           gradle-version: '9.3.1'
 
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: 'platforms;android-36'
+
       - name: Setup Gradle Wrapper
         run: |
           if [ ! -f "gradle/wrapper/gradle-wrapper.jar" ]; then
@@ -45,37 +50,19 @@ jobs:
           fi
           chmod +x ./gradlew || true
 
-      - name: Accept Android SDK Licenses & Install Platform 36
+      - name: Accept Android SDK Licenses
         run: |
-          SDK_ROOT="${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
-          if [ -z "$SDK_ROOT" ] || [ ! -d "$SDK_ROOT" ]; then
-            SDK_ROOT="/usr/local/lib/android/sdk"
-          fi
-          echo "Using Android SDK at: $SDK_ROOT"
-          echo "ANDROID_HOME=$SDK_ROOT" >> $GITHUB_ENV
-          echo "ANDROID_SDK_ROOT=$SDK_ROOT" >> $GITHUB_ENV
+          yes | sdkmanager --licenses 2>/dev/null || true
 
-          mkdir -p "$SDK_ROOT/licenses" "$HOME/.android/licenses" || true
-          for LIC_DIR in "$SDK_ROOT/licenses" "$HOME/.android/licenses"; do
-            echo "24333f8a63b6825ea9c5514f83c2829b004d1fee" > "$LIC_DIR/android-sdk-license" || true
-            echo "84831b9409646a753e30573bab4c9c9134d19a99" > "$LIC_DIR/android-sdk-preview-license" || true
-            echo "d975f751698a77b662f1254ddbeed3901e976f5a" > "$LIC_DIR/intel-android-extra-license" || true
-            echo "601085b94cd77f0b54ff86406957099fed807233" > "$LIC_DIR/google-gdk-license" || true
-            echo "e9acab5b5fbb560a72cfa4f69c30ed2e08ad5d86" > "$LIC_DIR/android-sdk-arm-dbt-license" || true
-          done
-
-          SDKMGR=$(find "$SDK_ROOT" -name sdkmanager -type f 2>/dev/null | head -n 1)
-          if [ -n "$SDKMGR" ]; then
-            echo "Running sdkmanager: $SDKMGR"
-            yes | "$SDKMGR" --sdk_root="$SDK_ROOT" --licenses 2>/dev/null || true
-            yes | "$SDKMGR" --sdk_root="$SDK_ROOT" "platforms;android-36" 2>/dev/null || true
-          fi
-
-      - name: Restore Debug Keystore
+      - name: Restore or Generate Debug Keystore
         run: |
           if [ -f "debug.keystore.base64" ] && [ ! -f "debug.keystore" ]; then
             echo "Decoding debug.keystore from base64..."
-            base64 -d debug.keystore.base64 > debug.keystore || base64 --decode debug.keystore.base64 > debug.keystore
+            base64 -d debug.keystore.base64 > debug.keystore 2>/dev/null || base64 --decode debug.keystore.base64 > debug.keystore 2>/dev/null || true
+          fi
+          if [ ! -f "debug.keystore" ] || [ ! -s "debug.keystore" ]; then
+            echo "Generating debug.keystore via keytool..."
+            keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
           fi
 
       - name: Prepare Environment File
