@@ -37,10 +37,38 @@ jobs:
         with:
           gradle-version: '9.3.1'
 
-      - name: Prepare Environment File
+      - name: Setup Gradle Wrapper
         run: |
-          if [ ! -f ".env" ]; then
-            touch .env
+          if [ ! -f "gradle/wrapper/gradle-wrapper.jar" ]; then
+            echo "Generating Gradle wrapper..."
+            gradle wrapper --gradle-version 9.3.1 || true
+          fi
+          chmod +x ./gradlew || true
+
+      - name: Accept Android SDK Licenses & Install Platform 36
+        run: |
+          SDK_ROOT="${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
+          if [ -z "$SDK_ROOT" ] || [ ! -d "$SDK_ROOT" ]; then
+            SDK_ROOT="/usr/local/lib/android/sdk"
+          fi
+          echo "Using Android SDK at: $SDK_ROOT"
+          echo "ANDROID_HOME=$SDK_ROOT" >> $GITHUB_ENV
+          echo "ANDROID_SDK_ROOT=$SDK_ROOT" >> $GITHUB_ENV
+
+          mkdir -p "$SDK_ROOT/licenses" "$HOME/.android/licenses" || true
+          for LIC_DIR in "$SDK_ROOT/licenses" "$HOME/.android/licenses"; do
+            echo "24333f8a63b6825ea9c5514f83c2829b004d1fee" > "$LIC_DIR/android-sdk-license" || true
+            echo "84831b9409646a753e30573bab4c9c9134d19a99" > "$LIC_DIR/android-sdk-preview-license" || true
+            echo "d975f751698a77b662f1254ddbeed3901e976f5a" > "$LIC_DIR/intel-android-extra-license" || true
+            echo "601085b94cd77f0b54ff86406957099fed807233" > "$LIC_DIR/google-gdk-license" || true
+            echo "e9acab5b5fbb560a72cfa4f69c30ed2e08ad5d86" > "$LIC_DIR/android-sdk-arm-dbt-license" || true
+          done
+
+          SDKMGR=$(find "$SDK_ROOT" -name sdkmanager -type f 2>/dev/null | head -n 1)
+          if [ -n "$SDKMGR" ]; then
+            echo "Running sdkmanager: $SDKMGR"
+            yes | "$SDKMGR" --sdk_root="$SDK_ROOT" --licenses 2>/dev/null || true
+            yes | "$SDKMGR" --sdk_root="$SDK_ROOT" "platforms;android-36" 2>/dev/null || true
           fi
 
       - name: Restore Debug Keystore
@@ -50,9 +78,26 @@ jobs:
             base64 -d debug.keystore.base64 > debug.keystore || base64 --decode debug.keystore.base64 > debug.keystore
           fi
 
-      - name: Build Debug APK
+      - name: Prepare Environment File
         run: |
-          gradle assembleDebug --no-configuration-cache --stacktrace
+          if [ ! -f ".env" ]; then
+            if [ -f ".env.example" ]; then
+              cp .env.example .env
+            else
+              touch .env
+            fi
+          fi
+
+      - name: Build Debug APK
+        env:
+          JAVA_OPTS: "-Djava.awt.headless=true"
+          GRADLE_OPTS: "-Djava.awt.headless=true -Dksp.useKSP2=true -Dorg.gradle.configuration-cache=false"
+        run: |
+          if [ -f "./gradlew" ]; then
+            ./gradlew assembleDebug --no-configuration-cache -Djava.awt.headless=true -Dksp.useKSP2=true --stacktrace
+          else
+            gradle assembleDebug --no-configuration-cache -Djava.awt.headless=true -Dksp.useKSP2=true --stacktrace
+          fi
 
       - name: Locate Generated APK
         id: apk-path
