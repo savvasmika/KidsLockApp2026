@@ -84,12 +84,12 @@ jobs:
       - name: Build Debug APK
         env:
           JAVA_OPTS: "-Djava.awt.headless=true"
-          GRADLE_OPTS: "-Djava.awt.headless=true -Dksp.useKSP2=true"
+          GRADLE_OPTS: "-Djava.awt.headless=true -Dksp.useKSP2=true -Dorg.gradle.configuration-cache=false"
         run: |
           if [ -f "./gradlew" ]; then
-            ./gradlew assembleDebug -Djava.awt.headless=true -Dksp.useKSP2=true --stacktrace
+            ./gradlew assembleDebug --no-configuration-cache -Djava.awt.headless=true -Dksp.useKSP2=true --stacktrace
           else
-            gradle assembleDebug -Djava.awt.headless=true -Dksp.useKSP2=true --stacktrace
+            gradle assembleDebug --no-configuration-cache -Djava.awt.headless=true -Dksp.useKSP2=true --stacktrace
           fi
 
       - name: Locate Generated APK
