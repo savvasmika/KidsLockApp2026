@@ -64,11 +64,14 @@ jobs:
           fi
 
       - name: Build Debug APK
+        env:
+          JAVA_OPTS: "-Djava.awt.headless=true"
+          GRADLE_OPTS: "-Djava.awt.headless=true"
         run: |
           if [ -f "./gradlew" ]; then
-            ./gradlew assembleDebug --no-daemon --stacktrace
+            ./gradlew assembleDebug --stacktrace
           else
-            gradle assembleDebug --no-daemon --stacktrace
+            gradle assembleDebug --stacktrace
           fi
 
       - name: Locate Generated APK
